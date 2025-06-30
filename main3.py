@@ -43,7 +43,7 @@ if st.session_state.game_state == 'start':
     st.write("미션을 시작하려면 아래 버튼을 눌러줘!")
     if st.button("미션 시작"):
         start_game()
-        st.experimental_rerun() # 상태 변경 후 새로고침
+        st.rerun() # 여기가 수정되었어!
 
 elif st.session_state.game_state == 'playing':
     st.subheader("현재 상황")
@@ -55,15 +55,15 @@ elif st.session_state.game_state == 'playing':
     with col1:
         if st.button("사격!", help="적에게 총을 쏜다."):
             shoot_enemy()
-            st.experimental_rerun()
+            st.rerun() # 여기가 수정되었어!
     with col2:
         if st.button("재장전", help="탄약을 보충한다."):
             reload_ammo()
-            st.experimental_rerun()
+            st.rerun() # 여기가 수정되었어!
     with col3:
         if st.button("후퇴", help="미션을 포기하고 도망간다."):
             run_away()
-            st.experimental_rerun()
+            st.rerun() # 여기가 수정되었어!
 
 elif st.session_state.game_state == 'end':
     st.subheader("미션 종료!")
@@ -71,7 +71,7 @@ elif st.session_state.game_state == 'end':
     st.write(f"최종 점수: {st.session_state.score}점")
     if st.button("다시 시작하기"):
         start_game()
-        st.experimental_rerun()
+        st.rerun() # 여기가 수정되었어!
 
 st.sidebar.markdown("---")
 st.sidebar.header("게임 정보")
